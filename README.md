@@ -232,10 +232,4 @@ school-management-api/
 | `RATE_LIMIT_WINDOW_MS` | Rate limit window (ms) | `900000` |
 | `RATE_LIMIT_MAX_REQUESTS` | Max requests per window | `100` |
 
-## License
 
-ISC
-
-## Author
-
-Developed with Node.js, Express, and MongoDB
