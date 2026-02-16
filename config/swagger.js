@@ -1,5 +1,14 @@
 const swaggerJsdoc = require('swagger-jsdoc');
 
+// Get server URL - works for Railway and local development
+const getServerUrl = () => {
+  if (process.env.RAILWAY_PUBLIC_DOMAIN) {
+    return `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`;
+  }
+  const port = process.env.PORT || 5000;
+  return `http://localhost:${port}`;
+};
+
 const options = {
   definition: {
     openapi: '3.0.0',
@@ -18,8 +27,8 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:5000',
-        description: 'Development server'
+        url: getServerUrl(),
+        description: process.env.RAILWAY_PUBLIC_DOMAIN ? 'Production (Railway)' : 'Development'
       }
     ],
     components: {

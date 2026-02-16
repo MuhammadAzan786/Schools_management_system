@@ -61,8 +61,14 @@ npm start
 
 Once the server is running, access the interactive API documentation at:
 
+**Local Development:**
 ```
 http://localhost:5000/api-docs
+```
+
+**Production (Railway):**
+```
+https://your-app-name.up.railway.app/api-docs
 ```
 
 ## Quick Start
