@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: school-management-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: JWT_EXPIRE
+        value: 7d
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
+      # Add these in Render dashboard (sensitive):
+      # - JWT_SECRET (generate random)
+      # - MONGODB_URI (from Render MongoDB or Atlas)
+
+databases:
+  - name: school-db
+    databaseName: school_management
+    user: school_user
